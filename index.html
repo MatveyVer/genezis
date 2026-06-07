@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Генезис — дружные всходы. Гибриды масличных культур</title>
+<meta name="description" content="Стойкие гибриды подсолнечника и рапса. Селекционный надзор в 5 регионах, агросопровождение от сева до уборки, адаптация к российскому климату.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#FFBE2E;
+    --gold-deep:#F0A50A;
+    --green:#3D6240;
+    --green-deep:#2D4A31;
+    --green-dark:#1F3323;
+    --cream:#EDD6B4;
+    --cream-soft:#F6ECD6;
+    --paper:#FBF5E9;
+    --ink:#141611;
+    --ink-soft:#3a3d34;
+    --white:#FFFFFF;
+    --shadow:0 24px 60px -28px rgba(31,51,35,.45);
+    --radius:22px;
+    --maxw:1240px;
+    font-synthesis:none;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Montserrat',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .display{font-weight:900;line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
+  .eyebrow{
+    font-weight:800;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block}
+
+  /* ---------- seed-ring logo ---------- */
+  .mark{width:46px;height:46px;color:var(--gold);flex:none}
+  .mark use{fill:currentColor}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+    font-family:inherit;font-weight:800;font-size:.86rem;letter-spacing:.04em;
+    text-transform:uppercase;cursor:pointer;border:none;
+    padding:15px 28px;border-radius:100px;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,color .2s;
+    white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 10px 24px -10px rgba(240,165,10,.7)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 30px -10px rgba(240,165,10,.85);background:#ffc944}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{transform:translateY(-3px);background:var(--green-deep)}
+  .btn-outline{background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;padding:13px 26px}
+  .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+  .btn-ink{background:var(--ink);color:var(--gold)}
+  .btn-ink:hover{transform:translateY(-3px);background:#000}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:60;background:var(--green);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:padding .3s,box-shadow .3s;
+  }
+  header.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+  .nav{display:flex;align-items:center;gap:32px;padding:16px 0;transition:padding .3s}
+  header.scrolled .nav{padding:11px 0}
+  .brand{display:flex;align-items:center;gap:13px;color:#fff}
+  .brand .mark{color:var(--gold);width:42px;height:42px;transition:transform .5s}
+  .brand:hover .mark{transform:rotate(40deg)}
+  .brand b{font-weight:900;font-size:1.32rem;letter-spacing:.16em;line-height:1}
+  .brand span{display:block;font-size:.5rem;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;font-weight:700;margin-top:3px}
+  .nav-links{display:flex;gap:30px;margin-left:auto;list-style:none}
+  .nav-links a{color:rgba(255,255,255,.86);font-weight:600;font-size:.92rem;position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .3s}
+  .nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-phone{color:#fff;font-weight:800;font-size:1rem;letter-spacing:.01em;white-space:nowrap}
+  .nav-phone:hover{color:var(--gold)}
+  .burger{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;flex-direction:column;justify-content:center;gap:5px;padding:8px}
+  .burger span{height:2.5px;background:#fff;border-radius:2px;transition:.3s}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--green);color:#fff;overflow:hidden;isolation:isolate}
+  .hero::before{ /* warm sun glow */
+    content:"";position:absolute;right:-10%;top:-20%;width:80vw;height:80vw;max-width:1000px;max-height:1000px;
+    background:radial-gradient(circle,rgba(255,190,46,.42) 0%,rgba(255,190,46,.12) 38%,transparent 66%);
+    z-index:-1;pointer-events:none;
+  }
+  .hero-pattern{position:absolute;inset:0;z-index:-1;opacity:.07;color:var(--gold);
+    background-image:none;}
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;
+    min-height:min(82vh,760px);padding:70px 0 90px}
+  .hero-eyebrow{color:var(--gold);margin-bottom:24px}
+  .hero h1{font-size:clamp(3.1rem,8.5vw,7rem);color:#fff;margin-bottom:8px}
+  .hero h1 .stroke{display:block;color:transparent;-webkit-text-stroke:2px var(--gold);text-stroke:2px var(--gold)}
+  .hero-sub{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em;
+    color:var(--cream);margin:18px 0 22px;line-height:1.1}
+  .hero-pill{display:inline-flex;align-items:center;gap:.5em;background:var(--gold);color:var(--ink);
+    font-weight:800;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;padding:9px 18px;border-radius:100px;margin-bottom:30px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:42px}
+  .hero-pillars{display:flex;flex-wrap:wrap;gap:14px 34px}
+  .pillar{display:flex;align-items:flex-start;gap:11px;max-width:215px}
+  .pillar .dot{width:11px;height:11px;border-radius:50%;background:var(--gold);margin-top:6px;flex:none;box-shadow:0 0 0 5px rgba(255,190,46,.16)}
+  .pillar p{font-size:.92rem;font-weight:600;color:rgba(255,255,255,.92);line-height:1.3}
+  /* hero visual: sunflower + seeds */
+  .hero-visual{position:relative;height:100%;min-height:380px}
+  .sunflower{position:absolute;right:-6%;top:50%;transform:translateY(-50%);width:min(58vw,560px);height:auto;
+    filter:drop-shadow(0 30px 50px rgba(0,0,0,.3));animation:sway 9s ease-in-out infinite}
+  @keyframes sway{0%,100%{transform:translateY(-50%) rotate(-1.5deg)}50%{transform:translateY(-52%) rotate(1.5deg)}}
+  .seed-float{position:absolute;background:var(--ink);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:.85}
+  .seed-float.s1{width:26px;height:52px;left:6%;bottom:14%;transform:rotate(30deg);background:var(--gold);opacity:.9;animation:drift 7s ease-in-out infinite}
+  .seed-float.s2{width:18px;height:38px;left:24%;top:18%;transform:rotate(-22deg);background:var(--cream);opacity:.55;animation:drift 8.5s ease-in-out infinite reverse}
+  .seed-float.s3{width:14px;height:30px;left:42%;bottom:24%;transform:rotate(48deg);background:var(--gold);opacity:.7;animation:drift 6s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translateY(0) rotate(var(--r,30deg))}50%{transform:translateY(-22px) rotate(calc(var(--r,30deg) + 12deg))}}
+  .express-tag{position:absolute;left:-6px;top:8%;writing-mode:vertical-rl;transform:rotate(180deg);
+    background:var(--ink);color:var(--gold);font-weight:900;letter-spacing:.32em;font-size:1.1rem;
+    padding:22px 8px;border-radius:8px;text-transform:uppercase;box-shadow:var(--shadow)}
+
+  /* wavy plant divider */
+  .plant-row{display:block;width:100%;height:54px;color:var(--green)}
+
+  /* ---------- generic section ---------- */
+  section{position:relative}
+  .sec-pad{padding:96px 0}
+  .sec-head{max-width:760px;margin-bottom:54px}
+  .sec-head .eyebrow{color:var(--green);margin-bottom:18px}
+  .sec-head h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:900;text-transform:uppercase;line-height:.98;letter-spacing:-.01em;color:var(--ink)}
+  .sec-head p{margin-top:18px;font-size:1.06rem;color:var(--ink-soft);max-width:620px;font-weight:500}
+
+  /* products */
+  .products{background:var(--cream-soft);overflow:hidden}
+  .products::after{content:"";position:absolute;right:-60px;bottom:-60px;width:300px;height:300px;
+    background:radial-gradient(circle,rgba(255,190,46,.3),transparent 70%);pointer-events:none}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border-radius:var(--radius);padding:30px 28px 28px;position:relative;overflow:hidden;
+    box-shadow:0 18px 40px -30px rgba(31,51,35,.4);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+    border:1px solid rgba(61,98,64,.08);display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-8px);box-shadow:0 34px 60px -34px rgba(31,51,35,.55)}
+  .card.dark{background:var(--ink);color:#fff;border-color:#000}
+  .card.dark .card-desc{color:rgba(255,255,255,.72)}
+  .card .seed-bg{position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;color:rgba(61,98,64,.06);transform:rotate(20deg);pointer-events:none}
+  .card.dark .seed-bg{color:rgba(255,190,46,.12)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}
+  .card-name{font-size:1.55rem;font-weight:900;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+  .card-crop{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);
+    background:rgba(61,98,64,.1);padding:5px 10px;border-radius:100px;align-self:flex-start;white-space:nowrap}
+  .card.dark .card-crop{color:var(--gold);background:rgba(255,190,46,.16)}
+  .tech-pill{display:inline-flex;width:max-content;background:var(--gold);color:var(--ink);font-weight:800;
+    font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px}
+  .card-desc{font-size:.95rem;color:var(--ink-soft);font-weight:500;line-height:1.5;flex:1}
+  .card-stats{display:flex;gap:18px;margin:20px 0 22px;flex-wrap:wrap}
+  .card-stats div{line-height:1.05}
+  .card-stats b{display:block;font-size:1.45rem;font-weight:900;color:var(--green)}
+  .card.dark .card-stats b{color:var(--gold)}
+  .card-stats small{font-size:.7rem;font-weight:600;color:#9a9c92;text-transform:uppercase;letter-spacing:.05em}
+  .card.dark .card-stats small{color:rgba(255,255,255,.55)}
+  .card-actions{display:flex;gap:10px;align-items:center}
+  .link-more{font-weight:800;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--green);display:inline-flex;align-items:center;gap:.4em;transition:gap .25s}
+  .card.dark .link-more{color:var(--gold)}
+  .link-more:hover{gap:.8em}
+
+  /* why-us */
+  .why{background:var(--green);color:#fff;overflow:hidden}
+  .why .sec-head .eyebrow{color:var(--gold)}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:rgba(255,255,255,.78)}
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .feature{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);
+    padding:32px;transition:background .3s,transform .3s;backdrop-filter:blur(2px)}
+  .feature:hover{background:rgba(255,255,255,.09);transform:translateY(-5px)}
+  .feature .ic{width:54px;height:54px;border-radius:14px;background:var(--gold);color:var(--ink);display:grid;place-items:center;margin-bottom:20px}
+  .feature .ic svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:2.2}
+  .feature h3{font-size:1.22rem;font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin-bottom:10px;line-height:1.1}
+  .feature p{font-size:.95rem;color:rgba(255,255,255,.8);font-weight:500;line-height:1.55}
+
+  /* results */
+  .results{background:var(--ink);color:#fff;overflow:hidden}
+  .results .sec-head .eyebrow{color:var(--gold)}
+  .results .sec-head h2{color:#fff}
+  .results .sec-head p{color:rgba(255,255,255,.72)}
+  .res-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+  .res-banner{background:var(--gold);color:var(--ink);border-radius:var(--radius);padding:38px;position:relative;overflow:hidden}
+  .res-banner h3{font-size:1.9rem;font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
+  .res-banner p{font-weight:600;font-size:.98rem;margin-bottom:24px}
+  .res-banner .seed-bg{position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;color:rgba(20,22,17,.1);transform:rotate(15deg)}
+  .res-bars{display:flex;flex-direction:column;gap:20px}
+  .bar-row{display:grid;grid-template-columns:170px 1fr auto;align-items:center;gap:16px}
+  .bar-row .region{font-weight:700;font-size:.92rem;color:rgba(255,255,255,.92)}
+  .bar-track{height:18px;background:rgba(255,255,255,.09);border-radius:100px;overflow:hidden}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:100px;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+  .bar-val{font-weight:900;font-size:1rem;color:var(--gold);white-space:nowrap;min-width:78px;text-align:right}
+  .res-note{font-size:.84rem;color:rgba(255,255,255,.5);margin-top:24px;font-weight:500}
+
+  /* process */
+  .process{background:var(--paper)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+  .step{position:relative;padding-top:26px}
+  .step::before{counter-increment:step;content:"0" counter(step);font-weight:900;font-size:2.6rem;color:var(--gold);
+    line-height:.8;display:block;margin-bottom:14px;-webkit-text-stroke:1px var(--gold-deep)}
+  .step h4{font-size:1.1rem;font-weight:800;text-transform:uppercase;margin-bottom:8px;letter-spacing:.01em}
+  .step p{font-size:.92rem;color:var(--ink-soft);font-weight:500}
+  .step-line{position:absolute;top:0;left:0;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--cream) 0 12px,transparent 12px 22px)}
+
+  /* cta / contact */
+  .contact{background:var(--green);color:#fff;overflow:hidden;position:relative}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+  .contact h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:900;text-transform:uppercase;line-height:.98;margin-bottom:18px}
+  .contact .lead{font-size:1.08rem;color:rgba(255,255,255,.84);margin-bottom:34px;max-width:440px;font-weight:500}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:18px}
+  .contact-list li{display:flex;align-items:center;gap:16px}
+  .contact-list .ci{width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--gold);flex:none}
+  .contact-list .ci svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2}
+  .contact-list small{display:block;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700}
+  .contact-list b{font-size:1.18rem;font-weight:800}
+  .contact-list a:hover b{color:var(--gold)}
+  /* form */
+  .form-card{background:var(--cream-soft);color:var(--ink);border-radius:26px;padding:38px;box-shadow:var(--shadow)}
+  .form-card h3{font-size:1.5rem;font-weight:900;text-transform:uppercase;margin-bottom:8px;line-height:1}
+  .form-card .fc-sub{font-size:.95rem;color:var(--ink-soft);margin-bottom:24px;font-weight:500}
+  .field{margin-bottom:16px}
+  .field input,.field textarea{width:100%;font-family:inherit;font-size:1rem;padding:15px 18px;border-radius:14px;
+    border:2px solid rgba(61,98,64,.18);background:#fff;color:var(--ink);transition:border .2s;font-weight:500}
+  .field textarea{resize:vertical;min-height:88px}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--green)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;color:var(--ink-soft);margin:8px 0 20px;font-weight:500}
+  .consent input{margin-top:3px;width:16px;height:16px;accent-color:var(--green);flex:none}
+  .consent a{color:var(--green);text-decoration:underline}
+  .form-card .btn{width:100%}
+  .form-msg{display:none;background:var(--green);color:#fff;padding:16px;border-radius:14px;font-weight:600;font-size:.95rem;text-align:center;margin-top:8px}
+  .form-msg.show{display:block;animation:pop .4s ease}
+  @keyframes pop{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+  .form-note{font-size:.8rem;color:var(--ink-soft);margin-top:14px;text-align:center;font-weight:500}
+
+  /* footer */
+  footer{background:var(--green-dark);color:rgba(255,255,255,.7)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding:64px 0 44px}
+  .foot-brand .brand{margin-bottom:18px}
+  .foot-brand .brand .mark{color:var(--gold)}
+  .foot-slogan{font-style:italic;color:var(--cream);font-size:1.05rem;font-weight:500;margin-bottom:16px}
+  .foot-brand p{font-size:.88rem;line-height:1.5}
+  .foot-col h5{color:#fff;font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:.12em;margin-bottom:18px}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .foot-col a{font-size:.92rem;transition:color .2s}.foot-col a:hover{color:var(--gold)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:14px;font-size:.8rem;color:rgba(255,255,255,.5)}
+  .foot-bottom a:hover{color:var(--gold)}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .hero .reveal{transition-delay:var(--d,0s)}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+  /* overflow & wrapping safety */
+  h1,h2,h3,h4,.card-name,.hero-sub{overflow-wrap:break-word;word-break:break-word}
+  img,svg{max-width:100%}
+  .m-only{display:none}
+
+  /* =================== RESPONSIVE =================== */
+
+  /* ---- tablet landscape ---- */
+  @media(max-width:1080px){
+    .nav-links{gap:22px}
+    .prod-grid{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:clamp(3rem,9vw,5.8rem)}
+  }
+
+  /* ---- switch to mobile nav + stacked hero ---- */
+  @media(max-width:900px){
+    .nav{gap:16px}
+    header.scrolled .nav{padding:13px 0}
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--green-deep);flex-direction:column;gap:0;
+      padding:6px 22px 22px;
+      box-shadow:0 24px 40px -22px rgba(0,0,0,.65);border-top:1px solid rgba(255,255,255,.08);
+      opacity:0;visibility:hidden;transform:translateY(-10px);
+      transition:opacity .3s ease,transform .3s ease,visibility .3s;
+    }
+    .nav-links.open{opacity:1;visibility:visible;transform:none}
+    .nav-links a{padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.08);font-size:1.05rem;display:block}
+    .nav-links a::after{display:none}
+    .nav-links .m-only{display:list-item}
+    .nav-phone{display:none}
+    .nav-cta{margin-left:auto}
+    .burger{display:flex}
+    .burger.x span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .burger.x span:nth-child(2){opacity:0}
+    .burger.x span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+    .hero-inner{grid-template-columns:1fr;min-height:auto;padding:48px 0 64px;gap:8px}
+    .hero-visual{min-height:auto;order:-1;margin-bottom:10px}
+    .sunflower{position:relative;right:auto;top:auto;transform:none;margin:0 auto;width:min(58vw,300px);animation:none}
+    .seed-float{display:none}
+    .express-tag{display:none}
+
+    .res-layout{grid-template-columns:1fr;gap:28px}
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+    .foot-top{grid-template-columns:1fr 1fr;gap:30px}
+    .steps{grid-template-columns:1fr 1fr;gap:30px 26px}
+    .why-grid{grid-template-columns:1fr 1fr}
+  }
+
+  /* ---- phones ---- */
+  @media(max-width:640px){
+    .wrap{padding:0 18px}
+    .sec-pad{padding:60px 0}
+    .sec-head{margin-bottom:38px}
+    .nav-cta .btn{padding:12px 20px;font-size:.8rem}
+    .brand b{font-size:1.18rem;letter-spacing:.13em}
+    .brand .mark{width:38px;height:38px}
+
+    .hero h1{font-size:clamp(2.7rem,13vw,4.4rem)}
+    .hero-sub{font-size:1.18rem}
+    .hero-actions{gap:10px}
+    .hero-actions .btn{flex:1 1 auto;justify-content:center}
+    .hero-pillars{flex-direction:column;gap:12px}
+    .pillar{max-width:none}
+
+    .prod-grid{grid-template-columns:1fr;gap:16px}
+    .card{padding:26px 22px 24px}
+    .card-actions{flex-wrap:wrap;gap:12px}
+    .card-actions .btn{flex:1 1 auto;justify-content:center}
+
+    .why-grid{grid-template-columns:1fr}
+    .feature{padding:26px 22px}
+
+    .res-banner{padding:30px 24px}
+    .res-banner h3{font-size:1.6rem}
+    .bar-row{grid-template-columns:1fr;gap:8px;align-items:flex-start}
+    .bar-row .bar-val{text-align:left;min-width:0}
+    .bar-track{width:100%}
+
+    .steps{grid-template-columns:1fr;gap:8px}
+    .step{padding-top:18px;border-top:2px dashed var(--cream)}
+    .step::before{font-size:2.1rem;margin-bottom:8px}
+    .step-line{display:none}
+
+    .contact h2,.sec-head h2{font-size:clamp(1.9rem,7vw,2.6rem)}
+    .form-card{padding:30px 22px}
+    .contact-list b{font-size:1.06rem}
+
+    .foot-top{grid-template-columns:1fr;gap:26px;padding:50px 0 36px}
+    .foot-bottom{flex-direction:column;gap:8px;text-align:left}
+  }
+
+  /* ---- very small ---- */
+  @media(max-width:360px){
+    .brand span span{display:none}
+    .nav-cta .btn{padding:11px 16px}
+    .hero h1{font-size:2.5rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== reusable seed-ring logo symbol ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="gx-seed"><ellipse cx="50" cy="13.5" rx="4" ry="8.4" transform="rotate(17 50 13.5)" fill="currentColor"/></g>
+    <symbol id="genesis-mark" viewBox="0 0 100 100">
+      <use href="#gx-seed" transform="rotate(0 50 50)"/>
+      <use href="#gx-seed" transform="rotate(32.73 50 50)"/>
+      <use href="#gx-seed" transform="rotate(65.45 50 50)"/>
+      <use href="#gx-seed" transform="rotate(98.18 50 50)"/>
+      <use href="#gx-seed" transform="rotate(130.9 50 50)"/>
+      <use href="#gx-seed" transform="rotate(163.63 50 50)"/>
+      <use href="#gx-seed" transform="rotate(196.36 50 50)"/>
+      <use href="#gx-seed" transform="rotate(229.09 50 50)"/>
+      <use href="#gx-seed" transform="rotate(261.81 50 50)"/>
+      <use href="#gx-seed" transform="rotate(294.54 50 50)"/>
+      <use href="#gx-seed" transform="rotate(327.27 50 50)"/>
+    </symbol>
+    <!-- single seed shape -->
+    <symbol id="gx-seed-shape" viewBox="0 0 40 90">
+      <ellipse cx="20" cy="45" rx="18" ry="44" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== header ===== -->
+<header id="top">
+  <nav class="nav wrap">
+    <a class="brand" href="#top" aria-label="Генезис — на главную">
+      <svg class="mark"><use href="#genesis-mark"/></svg>
+      <span><b>ГЕНЕЗИС</b><span>дружные всходы</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#products">Продукция</a></li>
+      <li><a href="#results">Результат</a></li>
+      <li><a href="#why">О нас</a></li>
+      <li><a href="#process">Сопровождение</a></li>
+      <li><a href="#contact">Контакты</a></li>
+      <li class="m-only"><a href="tel:88006004600">📞 8 800 600-46-00</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:88006004600">8 800 600-46-00</a>
+      <a class="btn btn-gold" href="#contact">Связаться</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner wrap">
+    <div class="hero-text">
+      <div class="hero-eyebrow eyebrow reveal" style="--d:.05s">Гибриды масличных культур · с 2019 года</div>
+      <h1 class="display reveal" style="--d:.12s">Дружные<br><span class="stroke">всходы</span></h1>
+      <p class="hero-sub reveal" style="--d:.22s">Стойкие гибриды подсолнечника и рапса</p>
+      <span class="hero-pill reveal" style="--d:.3s">Технология Express</span>
+      <div class="hero-actions reveal" style="--d:.38s">
+        <a class="btn btn-gold" href="#products">Каталог гибридов</a>
+        <a class="btn btn-outline" href="#contact">Подобрать семена</a>
+      </div>
+      <div class="hero-pillars reveal" style="--d:.46s">
+        <div class="pillar"><span class="dot"></span><p>Многоуровневый контроль качества</p></div>
+        <div class="pillar"><span class="dot"></span><p>Высокая урожайность</p></div>
+        <div class="pillar"><span class="dot"></span><p>Семена, выращенные с заботой</p></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal" style="--d:.2s">
+      <span class="express-tag">Express</span>
+      <!-- stylised sunflower -->
+      <svg class="sunflower" viewBox="0 0 400 400" aria-hidden="true">
+        <g>
+          <!-- petals -->
+          <g id="petals" fill="#FFBE2E">
+            <!-- generated petals -->
+          </g>
+          <!-- outer subtle petals -->
+          <circle cx="200" cy="200" r="96" fill="#caa01f"/>
+          <circle cx="200" cy="200" r="84" fill="#7a5c1c"/>
+          <circle cx="200" cy="200" r="84" fill="url(#seedpat)"/>
+        </g>
+        <defs>
+          <pattern id="seedpat" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+            <circle cx="4" cy="4" r="2.4" fill="#5c4514"/>
+          </pattern>
+        </defs>
+      </svg>
+      <span class="seed-float s1" style="--r:30deg"></span>
+      <span class="seed-float s2" style="--r:-22deg"></span>
+      <span class="seed-float s3" style="--r:48deg"></span>
+    </div>
+  </div>
+  <!-- plant row divider -->
+  <svg class="plant-row" viewBox="0 0 1200 54" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,54 L1200,54 L1200,30 Q900,8 600,30 T0,30 Z" fill="#FBF5E9"/>
+  </svg>
+</section>
+
+<!-- ===== products ===== -->
+<section class="products sec-pad" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Наша продукция</div>
+      <h2>Гибриды, которые<br>мы вывели для вас</h2>
+      <p>Собственные гибриды F1, адаптированные под климатические условия регионов России, с доказанной производительностью в поле.</p>
+    </div>
+
+    <div class="prod-grid">
+
+      <article class="card reveal">
+        <svg class="seed-bg"><use href="#gx-seed-shape"/></svg>
+        <div class="card-top">
+          <div class="card-name">CMK 166</div>
+          <span class="card-crop">Подсолнечник</span>
+        </div>
+        <span class="tech-pill">Express Sun</span>
+        <p class="card-desc">Высокоурожайный высокомасличный гибрид интенсивного типа с мощной начальной энергией роста. Быстрый старт и уверенное развитие на ранних этапах.</p>
+        <div class="card-stats">
+          <div><b>52%+</b><small>масличность</small></div>
+          <div><b>106–110</b><small>дней вегетации</small></div>
+        </div>
+        <div class="card-actions">
+          <a class="link-more" href="#contact">Подробнее →</a>
+          <a class="btn btn-green" href="#contact">Заказать</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <svg class="seed-bg"><use href="#gx-seed-shape"/></svg>
+        <div class="card-top">
+          <div class="card-name">CMK 460</div>
+          <span class="card-crop">Подсолнечник</span>
+        </div>
+        <span class="tech-pill">Express Sun</span>
+        <p class="card-desc">Гибрид интенсивного типа с хорошей адаптированностью для всех зон выращивания подсолнечника. Стабильный результат даже в сложный сезон.</p>
+        <div class="card-stats">
+          <div><b>Высокая</b><small>засухоустойчивость</small></div>
+          <div><b>Толер.</b><small>к заразихе A–G</small></div>
+        </div>
+        <div class="card-actions">
+          <a class="link-more" href="#contact">Подробнее →</a>
+          <a class="btn btn-green" href="#contact">Заказать</a>
+        </div>
+      </article>
+
+      <article class="card dark reveal">
+        <svg class="seed-bg"><use href="#gx-seed-shape"/></svg>
+        <div class="card-top">
+          <div class="card-name">CMK 10</div>
+          <span class="card-crop">Подсолнечник</span>
+        </div>
+        <span class="tech-pill">Express Sun</span>
+        <p class="card-desc">Отличается высокой устойчивостью к новым расам заразихи и уникальным сочетанием толерантности к болезням и засухе. Аналог премиальных импортных гибридов.</p>
+        <div class="card-stats">
+          <div><b>Устойч.</b><small>к новым расам</small></div>
+          <div><b>F1</b><small>аналог импорта</small></div>
+        </div>
+        <div class="card-actions">
+          <a class="link-more" href="#contact">Подробнее →</a>
+          <a class="btn btn-gold" href="#contact">Заказать</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <svg class="seed-bg"><use href="#gx-seed-shape"/></svg>
+        <div class="card-top">
+          <div class="card-name">РАП ТОП КЛ</div>
+          <span class="card-crop">Рапс озимый</span>
+        </div>
+        <span class="tech-pill">Clearfield</span>
+        <p class="card-desc">Озимый гибрид рапса с высокой зимостойкостью и устойчивостью к производственной системе борьбы с сорняками. Высокий потенциал по маслу.</p>
+        <div class="card-stats">
+          <div><b>Высокая</b><small>зимостойкость</small></div>
+          <div><b>44%+</b><small>масличность</small></div>
+        </div>
+        <div class="card-actions">
+          <a class="link-more" href="#contact">Подробнее →</a>
+          <a class="btn btn-green" href="#contact">Заказать</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <svg class="seed-bg"><use href="#gx-seed-shape"/></svg>
+        <div class="card-top">
+          <div class="card-name">LAGUN</div>
+          <span class="card-crop">Рапс яровой</span>
+        </div>
+        <span class="tech-pill">Express</span>
+        <p class="card-desc">Яровой гибрид рапса с быстрым стартом и дружным созреванием. Хорошо переносит стресс и подходит для широкого спектра почвенно-климатических зон.</p>
+        <div class="card-stats">
+          <div><b>Дружное</b><small>созревание</small></div>
+          <div><b>Стресс-</b><small>устойчивость</small></div>
+        </div>
+        <div class="card-actions">
+          <a class="link-more" href="#contact">Подробнее →</a>
+          <a class="btn btn-green" href="#contact">Заказать</a>
+        </div>
+      </article>
+
+      <article class="card reveal" style="background:var(--green);color:#fff;border-color:var(--green-deep);justify-content:center">
+        <svg class="mark" style="width:54px;height:54px;color:var(--gold);margin-bottom:18px"><use href="#genesis-mark"/></svg>
+        <div class="card-name" style="color:#fff">Не нашли свой гибрид?</div>
+        <p class="card-desc" style="color:rgba(255,255,255,.82);margin:12px 0 22px">Подберём семена под ваш регион, сверим нормы высева и обсудим технологию.</p>
+        <a class="btn btn-gold" href="#contact" style="align-self:flex-start">Получить подбор</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== why us ===== -->
+<section class="why sec-pad" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Почему выбирают Генезис</div>
+      <h2>Лояльность,<br>проверенная урожаем</h2>
+      <p>Каждый клиент для нас — это про долгосрочные отношения. Вы можете рассчитывать на нашу поддержку на всех этапах вызревания культуры. Ваш высокий урожай — наша главная цель.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feature reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 7l7-5 7 5M5 7v10l7 5 7-5V7"/></svg></div>
+        <h3>Селекционный надзор</h3>
+        <p>Каждый гибрид прошёл селекционный надзор в 5 разных по климату регионах РФ. Мы знаем о наших семенах всё, что нужно для уверенного результата в сезоне.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M19 21V10M3 10l9-7 9 7M9 21v-6h6v6"/></svg></div>
+        <h3>Сопровождение от сева до уборки</h3>
+        <p>Наши агрономы выезжают на поля, помогают с технологией и корректируют уход за посевами, чтобы вы стабильно получали высокий результат осенью.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Адаптация к российскому климату</h3>
+        <p>Мы выводим гибриды, которые выдерживают засуху, холод и болезни. Результат — стабильный урожай в самых разных зонах, от юга до средней полосы.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Данные и опыт</h3>
+        <p>Мы стремимся к 100% лояльности, чтобы каждый клиент возвращался. За каждым обещанием — годы работы, научные исследования и высокие стандарты.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== results ===== -->
+<section class="results sec-pad" id="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Результат сезона 2025</div>
+      <h2>Семена, которые<br>приносят урожай</h2>
+      <p>Урожайность подсолнечника по регионам в сезоне 2025 года — в том числе в условиях засухи на юге России.</p>
+    </div>
+    <div class="res-layout">
+      <div class="res-banner reveal">
+        <svg class="seed-bg"><use href="#gx-seed-shape"/></svg>
+        <h3>До 35 ц/га</h3>
+        <p>Подтверждённая урожайность подсолнечника в Воронежской и Белгородской областях в сезоне 2025.</p>
+        <a class="btn btn-ink" href="#contact">Запросить протоколы</a>
+      </div>
+      <div class="res-bars reveal">
+        <div class="bar-row">
+          <span class="region">Воронежская, Белгородская обл.</span>
+          <div class="bar-track"><span class="bar-fill" data-w="100%"></span></div>
+          <span class="bar-val">25–35 ц/га</span>
+        </div>
+        <div class="bar-row">
+          <span class="region">Тульская, Орловская обл.</span>
+          <div class="bar-track"><span class="bar-fill" data-w="71%"></span></div>
+          <span class="bar-val">25 ц/га</span>
+        </div>
+        <div class="bar-row">
+          <span class="region">Ставрополье, Ростовская обл. (засуха)</span>
+          <div class="bar-track"><span class="bar-fill" data-w="46%"></span></div>
+          <span class="bar-val">15–16 ц/га</span>
+        </div>
+        <p class="res-note">Данные предоставлены по результатам полевых наблюдений сезона 2025 года. Фактический результат зависит от соблюдения технологии и погодных условий.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== process ===== -->
+<section class="process sec-pad" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Как мы работаем</div>
+      <h2>От сева до уборки —<br>рядом с вами</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step-line"></span><h4>Подбор</h4><p>Подбираем гибрид под ваш регион, почву и севооборот. Сверяем нормы высева.</p></div>
+      <div class="step reveal"><span class="step-line"></span><h4>Поставка</h4><p>Поставляем семена F1 с многоуровневым контролем качества и сопроводительными документами.</p></div>
+      <div class="step reveal"><span class="step-line"></span><h4>Сопровождение</h4><p>Агроном выезжает на поле, помогает с технологией и защитой посевов в течение сезона.</p></div>
+      <div class="step reveal"><span class="step-line"></span><h4>Урожай</h4><p>Фиксируем результат и планируем следующий сезон. Цель — чтобы вы возвращались.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== contact ===== -->
+<section class="contact sec-pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <h2 class="display">Всегда<br>на связи</h2>
+      <p class="lead">Подобрать семена, сверить нормы высева или обсудить технологию под ваш регион — просто свяжитесь с нами. Отвечаем быстро и по делу.</p>
+      <ul class="contact-list">
+        <li><a href="tel:88006004600" style="display:flex;align-items:center;gap:16px">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2a14 14 0 006 6l2-3 5 2v4a2 2 0 01-2 2A18 18 0 012 6a2 2 0 012-2z"/></svg></span>
+          <span><small>Бесплатно по России</small><b>8 800 600-46-00</b></span></a></li>
+        <li><a href="mailto:i@genesissun.ru" style="display:flex;align-items:center;gap:16px">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg></span>
+          <span><small>Электронная почта</small><b>i@genesissun.ru</b></span></a></li>
+        <li><a href="https://t.me/gibrid_super" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 3L2 11l6 2 2 6 4-4 5 3z"/></svg></span>
+          <span><small>Телеграм</small><b>@gibrid_super</b></span></a></li>
+      </ul>
+    </div>
+
+    <div class="form-card reveal">
+      <h3>Оформить заявку</h3>
+      <p class="fc-sub">Оставьте контакты — мы свяжемся с вами для подбора семян и подтверждения заказа.</p>
+      <form id="orderForm" novalidate>
+        <div class="field"><input type="tel" name="phone" placeholder="Телефон *" required></div>
+        <div class="field"><input type="text" name="name" placeholder="Ваше имя"></div>
+        <div class="field"><textarea name="comment" placeholder="Ваш вопрос или комментарий"></textarea></div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>Даю согласие на <a href="#" onclick="return false">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+        </label>
+        <button type="submit" class="btn btn-green">Отправить заявку</button>
+        <div class="form-msg" id="formMsg">Спасибо! Заявка принята — перезвоним в течение рабочего дня. Если срочно — 8 800 600-46-00.</div>
+      </form>
+      <p class="form-note">Перезвоним в течение рабочего дня. Если срочно — звоните 8 800 600-46-00.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="wrap foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="#top">
+        <svg class="mark"><use href="#genesis-mark"/></svg>
+        <span><b style="color:#fff">ГЕНЕЗИС</b><span>дружные всходы</span></span>
+      </a>
+      <p class="foot-slogan">«Дружные всходы вместе с Генезисом»</p>
+      <p>Выводим гибриды масличных культур повышенной урожайности под контролем селекционеров. Выстраиваем долгосрочные отношения с партнёрами.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Навигация</h5>
+      <ul>
+        <li><a href="#top">Главная</a></li>
+        <li><a href="#why">О нас</a></li>
+        <li><a href="#results">Результат</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Гибриды</h5>
+      <ul>
+        <li><a href="#products">Подсолнечник CMK 166</a></li>
+        <li><a href="#products">Подсолнечник CMK 460</a></li>
+        <li><a href="#products">Подсолнечник CMK 10</a></li>
+        <li><a href="#products">Рапс РАП ТОП КЛ</a></li>
+        <li><a href="#products">Рапс LAGUN</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Контакты</h5>
+      <ul>
+        <li><a href="tel:88006004600">8 800 600-46-00</a></li>
+        <li><a href="mailto:i@genesissun.ru">i@genesissun.ru</a></li>
+        <li><a href="https://t.me/gibrid_super" target="_blank" rel="noopener">Telegram @gibrid_super</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2019–2026 ООО «Генезис» · ИНН 3102045609 · ОГРН 1193123021321</span>
+    <a href="#" onclick="return false">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script>
+  // build sunflower petals
+  (function(){
+    var g=document.getElementById('petals'); if(!g) return;
+    var n=24, cx=200, cy=200;
+    var ns='http://www.w3.org/2000/svg';
+    for(var i=0;i<n;i++){
+      var a=(i/n)*360;
+      var p=document.createElementNS(ns,'ellipse');
+      p.setAttribute('cx',cx); p.setAttribute('cy',cy-128);
+      p.setAttribute('rx',16); p.setAttribute('ry',56);
+      p.setAttribute('transform','rotate('+a+' '+cx+' '+cy+')');
+      p.setAttribute('fill', i%2 ? '#FFCB52' : '#FFBE2E');
+      g.appendChild(p);
+    }
+  })();
+
+  // header shrink
+  var header=document.getElementById('top');
+  window.addEventListener('scroll',function(){
+    header.classList.toggle('scrolled', window.scrollY>20);
+  });
+
+  // mobile menu
+  var burger=document.getElementById('burger'), links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){
+    burger.classList.toggle('x'); links.classList.toggle('open');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){burger.classList.remove('x');links.classList.remove('open');}
+  });
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        // animate bars inside
+        en.target.querySelectorAll('.bar-fill').forEach(function(b){
+          b.style.width=b.getAttribute('data-w');
+        });
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // fire hero reveals immediately
+  window.addEventListener('load',function(){
+    document.querySelectorAll('.hero .reveal').forEach(function(el){el.classList.add('in');});
+  });
+
+  // form
+  var form=document.getElementById('orderForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var phone=form.phone.value.trim(), consent=form.consent.checked;
+    if(!phone){form.phone.focus();form.phone.style.borderColor='#c0392b';return;}
+    if(!consent){form.consent.focus();return;}
+    document.getElementById('formMsg').classList.add('show');
+    form.phone.value=form.name.value=form.comment.value='';
+    form.consent.checked=false;
+  });
+</script>
+</body>
+</html>
