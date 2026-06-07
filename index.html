@@ -104,7 +104,7 @@
   .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;
     min-height:min(82vh,760px);padding:70px 0 90px}
   .hero-eyebrow{color:var(--gold);margin-bottom:24px}
-  .hero h1{font-size:clamp(3.1rem,8.5vw,7rem);color:#fff;margin-bottom:8px}
+  .hero h1{font-size:clamp(2.9rem,7.4vw,6.6rem);color:#fff;margin-bottom:8px;white-space:nowrap}
   .hero h1 .stroke{display:block;color:transparent;-webkit-text-stroke:2px var(--gold);text-stroke:2px var(--gold)}
   .hero-sub{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em;
     color:var(--cream);margin:18px 0 22px;line-height:1.1}
@@ -265,7 +265,7 @@
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
   /* overflow & wrapping safety */
-  h1,h2,h3,h4,.card-name,.hero-sub{overflow-wrap:break-word;word-break:break-word}
+  h2,h3,h4,.card-name,.hero-sub{overflow-wrap:break-word}
   img,svg{max-width:100%}
   .m-only{display:none}
 
@@ -275,7 +275,7 @@
   @media(max-width:1080px){
     .nav-links{gap:22px}
     .prod-grid{grid-template-columns:1fr 1fr}
-    .hero h1{font-size:clamp(3rem,9vw,5.8rem)}
+    .hero h1{font-size:clamp(2.9rem,7.6vw,5.6rem)}
   }
 
   /* ---- switch to mobile nav + stacked hero ---- */
